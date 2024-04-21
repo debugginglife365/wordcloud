@@ -1,0 +1,10 @@
+streamlit
+pandas
+matplotlib
+wordcloud
+openpyxl
+konlpy
+nltk
+langdetect
+
+# python -m pip install -r requirements.txt
