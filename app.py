@@ -12,6 +12,8 @@ import matplotlib.font_manager as fm
 
 nltk.download('punkt')
 
+# Set the page configuration to wide layout
+st.set_page_config(layout="wide")
 
 # Initialize session state variables
 if 'reset' not in st.session_state:
