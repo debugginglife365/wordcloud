@@ -12,6 +12,7 @@ import matplotlib.font_manager as fm
 
 nltk.download('punkt')
 
+
 # Initialize session state variables
 if 'reset' not in st.session_state:
     st.session_state['reset'] = False
@@ -88,9 +89,9 @@ def generate_word_cloud(data):
 
         noun_counts = Counter(full_text)
         wordcloud = WordCloud(font_path=font_path, background_color='white', colormap='Pastel1',
-                              width=3000, height=3600, max_words=500).generate_from_frequencies(noun_counts)
+                              width=800, height=800, max_words=200).generate_from_frequencies(noun_counts)
 
-        fig, ax = plt.subplots(figsize=(20,12))
+        fig, ax = plt.subplots(figsize=(10,6))
         ax.imshow(wordcloud, interpolation='bilinear')
         ax.axis('off')
         st.pyplot(fig)
@@ -104,7 +105,7 @@ def generate_bar_chart(data):
 
         # Extract and filter nouns
         nouns = []
-        for comment in data['상담이력']:  # Adjust column name if necessary
+        for comment in data['Contents']:  # Adjust column name if necessary
             nouns.extend(okt.nouns(comment))
         
         filtered_nouns = []
@@ -145,7 +146,10 @@ if response.status_code == 200:
 else:
     st.error("Failed to download the file.")
 
-col1, col_spacer, col2 = st.columns([2, 0.5, 2])
+
+
+col1, col_spacer, col2 = st.columns([1, 0.1, 1])
+
 
 with col1:
     uploaded_file = st.file_uploader("Choose an Excel or CSV file", type=['xlsx', 'csv'])
