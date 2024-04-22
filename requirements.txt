@@ -7,4 +7,4 @@ konlpy
 nltk
 langdetect
 
-# python -m pip install -r requirements.txt
+# 설치방법 python -m pip install -r requirements.txt
