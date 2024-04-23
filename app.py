@@ -12,8 +12,8 @@ import matplotlib.font_manager as fm
 
 nltk.download('punkt')
 
-# Set the page configuration to wide layout
-st.set_page_config(layout="wide")
+# # Set the page configuration to wide layout
+# st.set_page_config(layout="wide")
 
 # Initialize session state variables
 if 'reset' not in st.session_state:
@@ -150,7 +150,7 @@ else:
 
 
 
-col1, col_spacer, col2 = st.columns([1.5, 0.1, 3])
+col1, col2 = st.columns([1.5, 3], gap="small")
 
 
 with col1:
@@ -223,3 +223,4 @@ with col2:
             generate_bar_chart(data)
     else:
         st.write("No data available for the selected criteria.")
+
